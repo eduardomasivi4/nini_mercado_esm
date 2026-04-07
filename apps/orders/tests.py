@@ -1,3 +1,7 @@
 from django.test import TestCase
+from django.urls import path
+from .views import checkout_view
 
-# Create your tests here.
+urlpatterns = [
+    path('checkout/', checkout_view),
+]

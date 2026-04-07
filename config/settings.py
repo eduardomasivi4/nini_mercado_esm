@@ -18,7 +18,6 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-sys.path.insert(0, os.path.join(BASE_DIR/ 'apps'))
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -29,13 +28,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     # minhas apps
-    'apps.core',
-    'apps.users',
-    'apps.products',
-    'apps.inventory',
-    'apps.orders',
-    'apps.dashboard',
-    'apps.api'
+    'apps.core.apps.CoreConfig',
+    'apps.users.apps.UsersConfig',
+    'apps.products.apps.ProductsConfig',
+    'apps.inventory.apps.InventoryConfig',
+    'apps.orders.apps.OrdersConfig',
+    'apps.dashboard.apps.DashboardConfig',
+    'apps.api.apps.ApiConfig',
+    'apps.cart.apps.CartConfig',
 ]
 
 MIDDLEWARE = [
@@ -109,6 +109,7 @@ USE_I18N = True
 
 USE_TZ = True
 
+AUTH_USER_MODEL = 'users.User'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
